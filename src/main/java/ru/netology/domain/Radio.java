@@ -22,6 +22,12 @@ public class Radio {
     }
 
     public Radio(int initialActualChannel) {
+//        if ((numberRadio < CHANNEL_MIN || numberRadio > CHANNEL_MAX)) {
+//            System.out.println("введите номер канала от 0 до 9");
+//        } else if (soundLevel < LEVEL_MIN  || soundLevel > LEVEL_MAX) {
+//            System.out.println("введите уровень громкости от 0 до 10 ");
+//        } else {
+//
         this.numberRadio = initialActualChannel;
         this.soundLevel = initialActualChannel;
     }
@@ -40,7 +46,7 @@ public class Radio {
 
 
     public int setNumberRadio (int numberRadio) {
-        if (numberRadio < LEVEL_MIN || numberRadio > LEVEL_MAX) {
+        if (numberRadio < CHANNEL_MIN || numberRadio > CHANNEL_MAX) {
             System.out.println("введите номер канала от 0 до 9");
         } else {
             this.numberRadio = numberRadio;

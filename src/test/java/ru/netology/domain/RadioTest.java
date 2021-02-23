@@ -20,28 +20,30 @@ class RadioTest {
 
     @Test
     void testSetNumberRadioFAIL() {
-        int initialActualChannel = 5;
+        int initialActualChannel = 10;
+        String expected = "введите номер канала от 0 до 9";
 
         Radio radio = new Radio(initialActualChannel);
         int newActualChannal = radio.setNumberRadio(initialActualChannel);
 
-        assertEquals(5, newActualChannal);
+
+        assertEquals(expected, newActualChannal);
     }
 
     @Test
     void testSetLevelSoundRadioFAIL() {
-        int intitialActualLevel = 4;
+        int intitialActualLevel = 95;
 
         Radio radio = new Radio(intitialActualLevel);
         int newActualLevel = radio.setSoundLevel(intitialActualLevel);
 
-        assertEquals(4, newActualLevel);
+        assertEquals(95, newActualLevel);
     }
 
     @Test
     void testNextOK9() {
 
-        int actualChannal = 9;
+        int actualChannal = 10;
         Radio radio1 = new Radio(actualChannal);
         int newActualChannal = radio1.next();
 
@@ -59,11 +61,13 @@ class RadioTest {
 
     @Test
     void testPlusOK10(){
-        int actualLevelSound = 10;
-        Radio radio = new Radio(actualLevelSound);
+        int actualChannal = 0;
+        int actualLevelSound = 100;
+
+        Radio radio = new Radio(actualChannal, actualLevelSound);
         int newActualLevelSound = radio.plusSound();
 
-        assertEquals(10, newActualLevelSound);
+        assertEquals(100, newActualLevelSound);
     }
 
     @Test
